@@ -17,3 +17,5 @@ steps:
     api_key:
       from_secret: RELEASE_TOKEN
     files: "*.pdf"
+  when:
+    event: tag
