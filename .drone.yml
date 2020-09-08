@@ -10,3 +10,10 @@ steps:
   - tlmgr update --self
   - tlmgr install fontawesome5
   - make
+
+- name: publish
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: RELEASE_TOKEN
+    files: "*.pdf"
