@@ -1,0 +1,229 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Nikita Tereshin}
+
+% job title/career
+\cvjobtitle{Software Developer}
+
+%% optional information
+% profile picture
+% \cvprofilepic{pics/profile.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{December 9, 1992}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Moscow, Ramenki str.}
+% phone number
+\cvphone{+7 903 509 30 42}
+% email address
+\cvmail{nikita.tereshin@gmail.com}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+
+	\profilesection{About Me}
+    \aboutme{
+    Pythonista with a knack for studying. I also have significant experience with C\#, as well as moderate C/C++ knowledge. Looking for a Python developer position. 
+    }
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Social}
+		\begin{icontable}{2.5em}{1em}
+			\social{\faTelegram}
+				{https://t.me/rumkex}
+				{@rumkex}
+			\social{\faSkype}
+			    {skype:iincognito?chat}
+			    {iincognito}
+			\social{\faGithub}
+				{https://github.com/rumkex/}
+				{rumkex}
+		\end{icontable}
+
+	\profilesection{Languages}
+	\pointskill{\flag{flat/RU.png}}{Russian}{5}
+	\pointskill{\flag{flat/GB.png}}{English}{5}
+
+	\profilesection{Hard Skills}
+		\pointskill{\faPython}{Python}{5}
+		\skill[1.5em]{\faCompress}{Web Frameworks}
+		\skill[1.5em]{\faCompress}{Data Processing}
+		\pointskill{\faCube}{C\#}{5}
+		\pointskill{\faCube}{C++}{3}
+		\pointskill{\faCube}{HTML/CSS/JS}{3}
+		\skill[1.5em]{\faCompress}{React}
+		\skill{\faDatabase}{SQL}
+		\skill{\faSync}{DevOps}
+		\skill{\faSitemap}{System Administration}
+
+	\profilesection{Soft Skills}
+		\pointskill{\faChild}{Easy Learner}{3}[4]
+		\pointskill{\faCompress}{Managing Small Teams}{2}[4]
+}
+
+
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Working Experience}
+\begin{cvtable}[3]
+	\cvitem{2017 -- currently}{QA Platform, Ltd.}{Software Developer}{
+	    Creating build-to-order software for various clients and developing our own startup projects, 
+	    including examples below. Latest projects have me managing a small team with two other people. Other duties include maintaining internal infrastructure (VPN networking, self-hosted Gitea/Drone CI solution, private Docker registry).
+        \\[0.5em]
+    	\textbf{Case project:} a web-service that facilitates user interactions, task scheduling, event handling and network diagnostic capabilities for an office space IoT solution (ongoing project).
+    	\\
+    	My contribution: API and DB design, implementation of core backend subsystems mentioned above, assisting and mentoring a junior developer.
+    	\\
+    	\textit{Key technologies used: Python, FastAPI, SQLAlchemy, Celery, RabbitMQ}
+    	\\[0.5em]
+    	\textbf{Case project:} sensor data aggregation service using an external API that provides a dashboard for monitoring indoor climate parameters.
+    	\\
+    	My contribution: full backend implementation, partial frontend development, leading a team of two developers.
+    	\\
+    	Main results: the project had a few successful demonstrations for potential clients.
+    	\\
+    	\textit{Key technologies used: Python, Flask, SQLAlchemy}
+        \\[0.5em]
+    	\textbf{Case project:} internal web-service for configurable processing of submitted free-form tabular data to be later stored in a single database. Service includes ActiveDirectory integration and service integration using HTTP APIs.
+    	\\
+    	My contribution: full backend implementation, unit testing, deployment, service integration, continuing client support.
+    	\\
+    	Main results: the implemented service has successfully superseded the existing tool used previously, solving multiple performance and usability issues reported by client's employees.
+    	\\
+    	\textit{Key technologies used: C\#, ASP.NET Core}
+	    \\[0.5em]
+	    \textbf{Case project:} CLI utilities for managing and communicating with a BLE mesh network.
+	    \\
+	    My contribution: developing a complete solution in the form of a deployable Python package.
+	    \\
+	    Main results: the resulting tool was reported to be significantly simpler to use and feature-complete by client's developers and QA specialists. It is now used in production for maintenance purposes.
+	    \\
+    	\textit{Key technologies used: Python, Python C API}
+	}
+	\cvitem{2018 -- currently}{Moscow State University}{Junior Researcher}{
+	    Analyzing heaps of GNSS data. Writing bits and pieces of scientific software.
+	    \\
+    	\textit{Technologies used: Python, Numpy/Scipy/Matplotlib}
+	}
+\end{cvtable}
+
+
+\cvsection{Education}
+\begin{cvtable}[1.5]
+	\cvitem{2015 -- 2018}{Postgraduate degree in Physics}{Moscow State University}
+		{Specializing in Atmospheric Physics. Thesis work includes constructing 2D maps of atmospheric water vapor content from copious amounts of GPS data.}
+	\cvitem{2009 -- 2015}{Master's degree in Physics}{Moscow State University}{ }
+\end{cvtable}
+
+
+\cvsection{Extra-Curricular Activities}
+\begin{cvtable}
+	\cvitemshort{Kayaking}{Favorite summer weekend pastime}
+	\cvitemshort{Alpine Skiing}{Letting gravity do all the work}
+	\cvitemshort{Gaming}{More or less the reason for learning to code in the first place}
+\end{cvtable}
+
+
+% \newpage
+% \makebacksidebar
+
+\end{document}
