@@ -1,0 +1,12 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: build
+  image: arkark/latexmk
+  commands:
+  - tlmgr repository set http://dante.ctan.org/tex-archive/systems/texlive/tlnet/
+  - tlmgr update --self
+  - tlmgr install fontawesome5
+  - make
