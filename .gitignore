@@ -1,5 +1,6 @@
 fonts/*
 tmp/*
+*.xdv
 *pdf
 *gz
 *aux
