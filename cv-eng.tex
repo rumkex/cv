@@ -55,6 +55,7 @@
 \ifxetexorluatex
 	\usepackage{fontspec}
 	\defaultfontfeatures{Ligatures=TeX}
+    \setmainfont{Linux Libertine O}
 %	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
 \else
 	\usepackage[utf8]{inputenc}
@@ -105,7 +106,7 @@
 % short address/location, use \newline if more than 1 line is required
 \cvaddress{Moscow, Ramenki str.}
 % phone number
-\cvphone{+7 903 509 30 42}
+\cvphone{+7 (903) 509 30 42}
 % email address
 \cvmail{nikita.tereshin@gmail.com}
 
@@ -120,7 +121,7 @@
 
 	\profilesection{About Me}
     \aboutme{
-    Pythonista with a knack for studying. I also have significant experience with C\#, as well as moderate C/C++ knowledge. Looking for a Python developer position. 
+    Pythonista with a knack for studying. I also have significant experience with C\#, as well as moderate C/C++ knowledge. Looking for a Python developer position to solve challenging and new problems. 
     }
 
 	% social network accounts incl. proper hyperlinks
@@ -143,7 +144,7 @@
 
 	\profilesection{Hard Skills}
 		\pointskill{\faPython}{Python}{5}
-		\skill[1.5em]{\faCompress}{Web Frameworks}
+		\skill[1.5em]{\faCompress}{Web Development}
 		\skill[1.5em]{\faCompress}{Data Processing}
 		\pointskill{\faCube}{C\#}{5}
 		\pointskill{\faCube}{C++}{3}
@@ -151,7 +152,7 @@
 		\skill[1.5em]{\faCompress}{React}
 		\skill{\faDatabase}{SQL}
 		\skill{\faSync}{DevOps}
-		\skill{\faSitemap}{System Administration}
+		\skill{\faSitemap}{System Administration (Linux)}
 
 	\profilesection{Soft Skills}
 		\pointskill{\faChild}{Easy Learner}{3}[4]
@@ -168,44 +169,45 @@
 	\cvitem{2017 -- currently}{QA Platform, Ltd.}{Software Developer}{
 	    Creating build-to-order software for various clients and developing our own startup projects, 
 	    including examples below. Latest projects have me managing a small team with two other people. Other duties include maintaining internal infrastructure (VPN networking, self-hosted Gitea/Drone CI solution, private Docker registry).
-        \\[0.5em]
-    	\textbf{Case project:} a web-service that facilitates user interactions, task scheduling, event handling and network diagnostic capabilities for an office space IoT solution (ongoing project).
-    	\\
-    	My contribution: API and DB design, implementation of core backend subsystems mentioned above, assisting and mentoring a junior developer.
-    	\\
-    	\textit{Key technologies used: Python, FastAPI, SQLAlchemy, Celery, RabbitMQ}
-    	\\[0.5em]
-    	\textbf{Case project:} sensor data aggregation service using an external API that provides a dashboard for monitoring indoor climate parameters.
-    	\\
-    	My contribution: full backend implementation, partial frontend development, leading a team of two developers.
-    	\\
-    	Main results: the project had a few successful demonstrations for potential clients.
-    	\\
-    	\textit{Key technologies used: Python, Flask, SQLAlchemy}
-        \\[0.5em]
-    	\textbf{Case project:} internal web-service for configurable processing of submitted free-form tabular data to be later stored in a single database. Service includes ActiveDirectory integration and service integration using HTTP APIs.
-    	\\
-    	My contribution: full backend implementation, unit testing, deployment, service integration, continuing client support.
-    	\\
-    	Main results: the implemented service has successfully superseded the existing tool used previously, solving multiple performance and usability issues reported by client's employees.
-    	\\
-    	\textit{Key technologies used: C\#, ASP.NET Core}
-	    \\[0.5em]
-	    \textbf{Case project:} CLI utilities for managing and communicating with a BLE mesh network.
-	    \\
-	    My contribution: developing a complete solution in the form of a deployable Python package.
-	    \\
-	    Main results: the resulting tool was reported to be significantly simpler to use and feature-complete by client's developers and QA specialists. It is now used in production for maintenance purposes.
-	    \\
-    	\textit{Key technologies used: Python, Python C API}
 	}
 	\cvitem{2018 -- currently}{Moscow State University}{Junior Researcher}{
-	    Analyzing heaps of GNSS data. Writing bits and pieces of scientific software.
+	    Analyzing heaps of GNSS data. Writing bits and pieces of scientific software for data analysis.
 	    \\
-    	\textit{Technologies used: Python, Numpy/Scipy/Matplotlib}
+    	\textit{Technologies used: Numpy/Scipy/Matplotlib}
 	}
 \end{cvtable}
 
+\cvsection{Portfolio}
+
+\textbf{Case project:} a web-service that facilitates user interactions, task scheduling, event handling and network diagnostic capabilities for an office space IoT solution (ongoing project).
+
+My contribution: API and DB design, implementation of core backend subsystems mentioned above, assisting and mentoring a junior developer.
+
+\textit{Key technologies used: FastAPI, SQLAlchemy, Celery, RabbitMQ, Selenium WebDriver}
+\\[0.5em]
+\textbf{Case project:} sensor data aggregation service using an external API that provides a dashboard for monitoring indoor climate parameters.
+
+My contribution: full backend implementation, partial frontend development, leading a team of two developers.
+
+Main results: the project was deployed on two test sites processings tens of thousands of events per day and had a few successful demonstrations for potential clients.
+
+\textit{Key technologies used: Flask, SQLAlchemy}
+\\[0.5em]
+\textbf{Case project:} internal web-service for configurable processing of submitted free-form tabular data to be later stored in a single database. Service includes ActiveDirectory integration and service integration using HTTP APIs.
+
+My contribution: full backend implementation, unit testing, deployment, service integration, continuing client support.
+
+Main results: the implemented service has successfully superseded the existing tool used previously, solving multiple performance and usability issues reported by client's employees.
+
+\textit{Key technologies used: C\#, ASP.NET Core, EF Core, LDAP}
+\\[0.5em]
+\textbf{Case project:} CLI utilities for managing and communicating with a BLE mesh network.
+
+My contribution: developing a complete solution in the form of a deployable Python package.
+
+Main results: the resulting tool was reported to be significantly simpler to use and feature-complete by client's developers and QA specialists. It is now used in production for maintenance purposes.
+
+\textit{Key technologies used: AsyncIO, Python C API}
 
 \cvsection{Education}
 \begin{cvtable}[1.5]
