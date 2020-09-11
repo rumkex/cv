@@ -9,4 +9,4 @@
 
 .PHONY: all
 
-all: cv-eng.pdf
+all: cv-eng.pdf cv-rus.pdf
