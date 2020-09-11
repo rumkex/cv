@@ -4,11 +4,11 @@ name: default
 
 steps:
 - name: build
-  image: arkark/latexmk
+  image: konttipoju/tinytex:2020-04a
   commands:
-  - tlmgr repository set http://dante.ctan.org/tex-archive/systems/texlive/tlnet/
+  - apt-get update && apt-get -y install make fonts-linuxlibertine
   - tlmgr update --self
-  - tlmgr install fontawesome5
+  - tlmgr install fontawesome5 textpos titlesec graphbox xhfill smartdiagram hyphen-russian
   - make
 
 - name: publish
